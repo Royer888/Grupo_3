@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/mes")
-@CrossOrigin(origins = "*")
 @Tag(name = "MES", description = "CRUD de meses del año - Tabla de apoyo del sistema VISIAF")
 public class MesController {
 
@@ -45,8 +44,6 @@ public class MesController {
     //    "nommes": "ENERO"
     //  }
     // automaticamente se le asiganra un codigo al mes
-
-
 
     @Operation(summary = "Actualizar un mes", description = "Actualiza los datos de un mes existente por su ID")
     @PutMapping("/{id}")

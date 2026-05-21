@@ -1,22 +1,29 @@
-package com.example.Grupo3.departamentos;
+package com.example.Grupo3.Entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "departamentos")
 @Schema(description = "Modelo de la tabla DEPARTAMENTOS")
-public class Departamento {
+public class DepartamentoEntity {
 
+    @Id
+    @Column(name = "codigo")
     @Schema(
             description = "Código único del departamento",
             example = "1"
     )
-    private int codigo;
+    private Integer codigo;
 
+    @Column(name = "descripcion", length = 15)
     @Schema(
             description = "Nombre del departamento",
             example = "LA PAZ"
     )
-    private String desc;
+    private String descripcion;
 
+    @Column(name = "sigla", length = 10)
     @Schema(
             description = "Sigla del departamento",
             example = "LPZ"
@@ -24,30 +31,30 @@ public class Departamento {
     private String sigla;
 
     // Constructor vacío
-    public Departamento() {
-    }
+    public DepartamentoEntity() {}
 
     // Constructor completo
-    public Departamento(int codigo, String desc, String sigla) {
+    public DepartamentoEntity(Integer codigo, String descripcion, String sigla) {
         this.codigo = codigo;
-        this.desc = desc;
+        this.descripcion = descripcion;
         this.sigla = sigla;
     }
 
-    public int getCodigo() {
+    // Getters y Setters
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getSigla() {

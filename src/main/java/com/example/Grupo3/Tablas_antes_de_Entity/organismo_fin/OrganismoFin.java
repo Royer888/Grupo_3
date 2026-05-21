@@ -1,15 +1,39 @@
 package com.example.Grupo3.Tablas_antes_de_Entity.organismo_fin;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Modelo de la tabla ORGANISMO_FIN")
 public class OrganismoFin {
 
+    @Schema(
+            description = "Año de gestión del organismo financiador",
+            example = "2013"
+    )
     private int gestion;
+
+    @Schema(
+            description = "Código único del organismo financiador",
+            example = "111"
+    )
     private String of;
+
+    @Schema(
+            description = "Descripción completa del organismo financiador",
+            example = "Tesoro"
+    )
     private String des;
+
+    @Schema(
+            description = "Sigla oficial del organismo financiador",
+            example = "TGN"
+    )
     private String sigla;
 
+    // Constructor vacío
     public OrganismoFin() {
     }
 
+    // Constructor completo
     public OrganismoFin(int gestion, String of, String des, String sigla) {
         this.gestion = gestion;
         this.of = of;

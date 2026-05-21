@@ -1,4 +1,4 @@
-package com.example.Grupo3.mes;
+package com.example.Grupo3.Tablas_antes_de_Entity.mes;
 
 public class Mes {
     private int mes;

@@ -1,4 +1,4 @@
-package com.example.Grupo3.organismo_fin;
+package com.example.Grupo3.Tablas_antes_de_Entity.organismo_fin;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

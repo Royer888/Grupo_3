@@ -1,4 +1,4 @@
-package com.example.Grupo3.objgasto;
+package com.example.Grupo3.Tablas_antes_de_Entity.objgasto;
 
 import jakarta.persistence.*;
 

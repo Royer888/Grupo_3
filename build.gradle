@@ -24,10 +24,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
+<<<<<<< HEAD
     implementation 'me.paulschwarz:spring-dotenv:3.0.0'
 
     runtimeOnly 'org.postgresql:postgresql'
 
+=======
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.postgresql:postgresql'
+>>>>>>> 4a2751a (Migración a PostgreSQL para la tabla ObjGasto lista (#16))
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

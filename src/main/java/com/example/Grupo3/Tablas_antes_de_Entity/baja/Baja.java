@@ -1,4 +1,4 @@
-package com.example.Grupo3.baja;
+package com.example.Grupo3.Tablas_antes_de_Entity.baja;
 
 public class Baja {
     private int codbaja;

@@ -1,4 +1,4 @@
-package com.example.Grupo3.objgasto;
+package com.example.Grupo3.Tablas_antes_de_Entity.objgasto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

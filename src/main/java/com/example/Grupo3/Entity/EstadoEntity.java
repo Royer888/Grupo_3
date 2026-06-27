@@ -13,7 +13,7 @@ public class EstadoEntity {
     @Schema(description = "Código único del estado", example = "1")
     private int codestado;
 
-    @Column(name = "nomestado", length = 10, nullable = false)
+    @Column(name = "nomestado", length = 30, nullable = false)
     @Schema(description = "Nombre del estado físico", example = "BUENO")
     private String nomestado;
 

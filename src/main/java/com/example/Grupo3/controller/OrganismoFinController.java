@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/organismos")
+@RequestMapping("/api/organismos")
 @Tag(
         name = "ORGANISMO_FIN",
         description = "CRUD de organismos financiadores del sistema VISIAF"

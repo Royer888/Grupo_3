@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/estados")
+@RequestMapping("/api/estados")
 @Tag(
         name = "ESTADO",
         description = "CRUD de estados físicos de bienes del sistema VISIAF"

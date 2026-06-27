@@ -1,47 +1,60 @@
-package com.example.Grupo3.test_ent;
+package com.example.Grupo3.Entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Schema(description = "Modelo de la tabla TEST_ENT")
-public class TestEnt {
+@Entity
+@Table(name = "entidad")
+@Schema(description = "Modelo de la tabla Entidad")
+public class EntidadEntity {
 
-    @Schema(description = "Año de gestión", example = "2012")
+    @Column(name = "gestion", nullable = false)
+    @Schema(description = "Anio de gestion", example = "2012")
     private int gestion;
 
-    @Schema(description = "Código del sector", example = "1")
+    @Column(name = "sector_ent", nullable = false)
+    @Schema(description = "Codigo del sector", example = "1")
     private int sector_ent;
 
-    @Schema(description = "Código de subsector", example = "1")
+    @Column(name = "subsec_ent", nullable = false)
+    @Schema(description = "Codigo de subsector", example = "1")
     private int subsec_ent;
 
-    @Schema(description = "Código del área", example = "1")
+    @Column(name = "area_ent", nullable = false)
+    @Schema(description = "Codigo del area", example = "1")
     private int area_ent;
 
-    @Schema(description = "Código de subárea", example = "14")
+    @Column(name = "subareaent", nullable = false)
+    @Schema(description = "Codigo de subarea", example = "14")
     private int subareaent;
 
+    @Column(name = "nivel_inst", nullable = false)
     @Schema(description = "Nivel institucional", example = "0")
     private int nivel_inst;
 
-    @Schema(description = "Descripción de la estructura", example = "Gobiernos Autónomos Departamentales")
+    @Column(name = "des_estruct", nullable = false, length = 120)
+    @Schema(description = "Descripcion de la estructura", example = "Gobiernos Autonomos Departamentales")
     private String des_estruct;
 
+    @Id
+    @Column(name = "siglaestru", nullable = false, length = 30)
     @Schema(description = "Sigla de la estructura", example = "GAD")
     private String siglaestru;
 
+    @Column(name = "apropiable", nullable = false, length = 1)
     @Schema(description = "Indica si es apropiable", example = "S")
     private String apropiable;
 
-    // Constructor vacío
-    public TestEnt() {
+    public EntidadEntity() {
     }
 
-    // Constructor completo
-    public TestEnt(int gestion, int sector_ent, int subsec_ent,
-                   int area_ent, int subareaent, int nivel_inst,
-                   String des_estruct, String siglaestru,
-                   String apropiable) {
-
+    public EntidadEntity(int gestion, int sector_ent, int subsec_ent,
+                         int area_ent, int subareaent, int nivel_inst,
+                         String des_estruct, String siglaestru,
+                         String apropiable) {
         this.gestion = gestion;
         this.sector_ent = sector_ent;
         this.subsec_ent = subsec_ent;

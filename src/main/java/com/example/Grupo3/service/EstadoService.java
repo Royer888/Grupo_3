@@ -2,7 +2,6 @@ package com.example.Grupo3.service;
 
 import com.example.Grupo3.Entity.EstadoEntity;
 import com.example.Grupo3.repository.EstadoRepository;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,16 +13,6 @@ public class EstadoService {
 
     @Autowired
     private EstadoRepository estadoRepository;
-
-    @PostConstruct
-    public void init() {
-        if (estadoRepository.count() == 0) {
-            estadoRepository.save(new EstadoEntity(1, "BUENO"));
-            estadoRepository.save(new EstadoEntity(2, "REGULAR"));
-            estadoRepository.save(new EstadoEntity(3, "MALO"));
-            estadoRepository.save(new EstadoEntity(4, "EXCELENTE"));
-        }
-    }
 
     public List<EstadoEntity> obtenerTodos() {
         return estadoRepository.findAll();

@@ -17,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         • Cristian David Paco Bravo
         • Roger Flores Choque
         • Jorge Roman Ochoa Saldaña
+        • Dayci Aide Coro Mendo
 
         Materia: Tecnologías Emergentes Gestión 2026
         """

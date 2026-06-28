@@ -6,6 +6,7 @@ import com.example.Grupo3.Entity.DepartamentoEntity;
 import com.example.Grupo3.Entity.EntidadEntity;
 import com.example.Grupo3.Entity.EstadoEntity;
 import com.example.Grupo3.Entity.MesEntity;
+import com.example.Grupo3.Entity.ObjetoGastoEntity;
 import com.example.Grupo3.Entity.OrganismoFinEntity;
 import com.example.Grupo3.Entity.UnidadAdministrativaEntity;
 import com.example.Grupo3.Entity.UsuarioEntity;
@@ -15,6 +16,7 @@ import com.example.Grupo3.repository.DepartamentoRepository;
 import com.example.Grupo3.repository.EntidadRepository;
 import com.example.Grupo3.repository.EstadoRepository;
 import com.example.Grupo3.repository.MesRepository;
+import com.example.Grupo3.repository.ObjetoGastoRepository;
 import com.example.Grupo3.repository.OrganismoFinRepository;
 import com.example.Grupo3.repository.UnidadAdministrativaRepository;
 import com.example.Grupo3.repository.UsuarioRepository;
@@ -35,6 +37,7 @@ public class DataInitializer implements CommandLineRunner {
     private final EntidadRepository entidadRepository;
     private final UnidadAdministrativaRepository unidadAdministrativaRepository;
     private final ActivoRepository activoRepository;
+    private final ObjetoGastoRepository objetoGastoRepository;
 
     public DataInitializer(UsuarioRepository usuarioRepository,
                            MesRepository mesRepository,
@@ -44,7 +47,8 @@ public class DataInitializer implements CommandLineRunner {
                            OrganismoFinRepository organismoFinRepository,
                            EntidadRepository entidadRepository,
                            UnidadAdministrativaRepository unidadAdministrativaRepository,
-                           ActivoRepository activoRepository) {
+                           ActivoRepository activoRepository,
+                           ObjetoGastoRepository objetoGastoRepository) {
         this.usuarioRepository = usuarioRepository;
         this.mesRepository = mesRepository;
         this.departamentoRepository = departamentoRepository;
@@ -54,6 +58,7 @@ public class DataInitializer implements CommandLineRunner {
         this.entidadRepository = entidadRepository;
         this.unidadAdministrativaRepository = unidadAdministrativaRepository;
         this.activoRepository = activoRepository;
+        this.objetoGastoRepository = objetoGastoRepository;
     }
 
     @Override
@@ -67,6 +72,7 @@ public class DataInitializer implements CommandLineRunner {
         cargarEntidades();
         cargarUnidadesAdministrativas();
         cargarActivos();
+        cargarObjetosGasto();
     }
 
     private void cargarUsuarios() {
@@ -184,6 +190,19 @@ public class DataInitializer implements CommandLineRunner {
                     "UATF",
                     "admin"
             ));
+        }
+    }
+
+    private void cargarObjetosGasto() {
+        if (objetoGastoRepository.count() == 0) {
+            objetoGastoRepository.save(new ObjetoGastoEntity("31120", "Gastos por alimentaci\u00f3n", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("31130", "Gastos por hospedaje", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("34110", "Combustibles y lubricantes", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("34200", "Productos qu\u00edmicos y farmac\u00e9uticos", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("39700", "\u00datiles de escritorio y oficina", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("43110", "Equipo de oficina y muebles", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("43400", "Equipo de computaci\u00f3n", 2026, "ACTIVO"));
+            objetoGastoRepository.save(new ObjetoGastoEntity("43500", "Equipo de comunicaci\u00f3n", 2026, "ACTIVO"));
         }
     }
 }
